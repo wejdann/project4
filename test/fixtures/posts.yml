@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visitor: one
+  TalentName: MyString
+  TalentDescription: MyString
+
+two:
+  visitor: two
+  TalentName: MyString
+  TalentDescription: MyString

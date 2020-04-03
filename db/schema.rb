@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_04_03_201748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "posts", force: :cascade do |t|
+    t.bigint "visitor_id"
+    t.string "TalentName"
+    t.string "TalentDescription"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["visitor_id"], name: "index_posts_on_visitor_id"
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "FullName"
+    t.string "Phone_no"
+    t.date "BirthDay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "posts", "visitors"
 end
