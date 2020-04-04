@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= f.hidden_field :visitor_id, :value => @visitor.id %>
+  <div class="input-field col s6">
+  	<%= f.label :TalentName, 'Talent Name :' %>
+  	<%= f.text_field :TalentName %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :TalentDescription, 'Talent Description :' %>
+  	<%= f.text_field :TalentDescription %>
+  </div>
+  <%= f.submit "Submit", :class => "btn waves-effect waves-light" %>
+<% end %>
