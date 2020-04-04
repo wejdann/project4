@@ -1,0 +1,16 @@
+<%= form_for @visitor do |f| %>
+  <div class="input-field col s6">
+  	<%= f.label :FullName, 'Full Name :'%>
+  	<%= f.text_field :FullName%>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :Phone_no, 'phone number :' %>
+  	<%= f.text_field :Phone_no %>
+  </div>
+  <div class="input-field col s6">
+  	<%= f.label :BirthDay, 'Birth Day :' %>
+  	<%= f.date_field :BirthDay %>
+  </div>
+
+  <%= f.submit "Submit", :class => "btn waves-effect waves-light" %>
+<% end %>
