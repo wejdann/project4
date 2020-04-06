@@ -1,2 +1,17 @@
-<h1> New User </h1>
-<%= render 'form'%>
+<h1> New Talent </h1>
+<% if @visitor.errors.any? %>
+  <h3>We've got problems!</h3>
+  <h4>
+  <%= pluralize(@visitor.errors.count, 'error') %>
+  stopped us from saving :
+</h4>
+
+<ul>
+  <% @visitor.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+<%= render partial: 'form' , locals: { visitor: @visitor }%>
