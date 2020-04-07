@@ -15,3 +15,21 @@
  */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+html, body {
+    background: #bab1b1;
+}
+a {
+    color:#a78787;
+    
+}
+a:hover{
+    color: #bab4b4;
+}
+h1 {
+    color: #6d5050;
+}
+p{
+    color: rgb(79, 55, 55);
+}
+
+

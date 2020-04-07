@@ -1,19 +1,22 @@
 <h1> <%= @visitor.FullName %> Posts</h1>
-<%= link_to "New Post", new_post_path(:visitor_id => @visitor.id), { :class => "button waves-effect waves-light btn" } %>
+<br><br>
+<h3><%= link_to "New Post", new_post_path(:visitor_id => @visitor.id), { :class => "btn btn-primary btn-sm active bg-secondary text-white rounded-top"}%></h3>
 <br><br>
 
-<div class="row">
+<div class="d-flex justify-content-between">
 <% @posts.each do |post|%>
-        <div class="card-panel grey lighten-2 col s4" style="margin: 10px">
-        <strong><p>Talent Name :</p></strong>
-        <%= post.TalentName %>
-<br><br>
-        <strong><p>Talent Description :</p></strong>
-        <%= post.TalentDescription %>
-<br><br>
-
-        <a class="btn-floating btn-large red" data-confirm="Are you sure you want to delete <%= post.TalentName %>?" data-method="delete" href="/posts/<%= post.id %>" rel="nofollow"><i class="large material-icons">Delete </i>
+<div class="card-group">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Talent Name :</h5>
+<h6 class="card-subtitle mb-2 text-muted"><%= post.TalentName %></h6>
+        <h5 class="card-text">Talent Description :</h5>
+       <h6 class="card-subtitle mb-2 text-muted"> <%= post.TalentDescription %></h6>
+         <div class="btn-group" role="group" aria-label="Basic example">
+        <a class="btn btn-secondary " role="button" aria-pressed="true" data-confirm="Are you sure you want to delete <%= post.TalentName %>?" data-method="delete" href="/posts/<%= post.id %>" rel="nofollow"><i class="large material-icons">Delete </i>
    </a>
-      </div>
+ </div>
+  </div>
+  </div>
 <% end %>
 </div>

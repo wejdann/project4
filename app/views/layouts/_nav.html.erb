@@ -26,6 +26,9 @@
         </div>
       </li>
     </ul>
+      <% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>
+<% end %>
   </div>
   
    <form class="form-inline mt-2 mt-md-0">

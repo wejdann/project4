@@ -2,16 +2,21 @@ class VisitorsController < ApplicationController
     before_action :authenticate_user!, only: [:new , :show]  
     before_action :find_visitor, except: [:index, :new, :create]
    
-    def show
-        @visitor = Visitor.find(params[:id])
-        @posts = @visitor.posts
-        if @visitor != current_user
-            flash[:notice] = 'Not allowed!'
-        elsif @visitor = current_user
-            flash[:notice] = 'Allowed!'
-          redirect_to visitors_path
+
+
+    def show   
+        @posts = @visitor.posts  
+        if @visitor.user != current_user   
+         flash[:notice]= 'Not alowed!'  
+          redirect_to visitors_path    
+         end
         end
-    end
+
+
+
+
+
+
 
     def index
         if @visitors = current_user
