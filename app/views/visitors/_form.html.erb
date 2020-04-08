@@ -9,7 +9,7 @@
   </div>
   <div class="input-field col s6">
   	<%= f.label :BirthDay, 'Birth Day :' %>
-  	<%= f.date_field :BirthDay %>
+  	<%= f.date_select :BirthDay , :start_year=>1990 , :end_year=>2005%>
   </div>
 
   <%= f.submit "Submit", :class => "btn waves-effect waves-light" %>

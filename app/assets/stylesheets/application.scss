@@ -13,10 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 html, body {
-    background: #bab1b1;
+    background: #e4decd
 }
 a {
     color:#a78787;
@@ -25,11 +26,28 @@ a {
 a:hover{
     color: #bab4b4;
 }
-h1 {
-    color: #6d5050;
+h1,h2,h3,h4,h5 {
+    color: #845007
 }
+
 p{
-    color: rgb(79, 55, 55);
+    color: #bd8c7d
 }
 
+.navbar,.dropdown-menu{
+    background-color:#82716e
 
+}
+  li a {
+    color: #e4decd
+    
+  }
+    li a:hover {
+        color:  #c2b490
+  }
+  .dropdown-item{
+    color: #e4decd
+  }
+ 
+  
+    
