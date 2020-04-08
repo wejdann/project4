@@ -4,19 +4,14 @@ class VisitorsController < ApplicationController
    
 
 
-    def show   
-        @posts = @visitor.posts  
-        if @visitor.user != current_user   
-         flash[:notice]= 'Not alowed!'  
-          redirect_to visitors_path    
-         end
+    def show
+        @posts = @visitor.posts
+        if @visitor != current_user
+        elsif @visitor = current_user
+          redirect_to visitors_path
         end
-
-
-
-
-
-
+    end
+    
 
     def index
         if @visitors = current_user
@@ -37,7 +32,10 @@ class VisitorsController < ApplicationController
 
         if @visitor.save
             redirect_to "/visitors/#{params[:visitor_id]}/"
+            flash[:notice] = 'Well done! You added Information successfully'
+
           else
+            flash[:alert] = 'Oh snap! Try again'
             render 'new'
           end
     end
@@ -49,12 +47,13 @@ class VisitorsController < ApplicationController
     def update
         visitor = Visitor.find(params[:id])
         visitor.update(person_params)
-
+        flash[:notice] = 'Your update successfully'
         redirect_to "/visitors/#{params[:visitor_id]}/"
     end 
 
     def destroy
         Visitor.find(params[:id]).destroy
+        flash[:notice] = 'Pip-Pip!'
         redirect_to   visitors_path
     end 
 

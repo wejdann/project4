@@ -1,17 +1,23 @@
-<h1> All The Talent </h1>
-<%= link_to "My Information", new_visitor_path,{:class => "btn btn-primary btn-sm active bg-secondary text-white rounded-top"}%>
-<br><br>
+<h1> All The Talents </h1>
 
-<div class="d-flex justify-content-between">
+
+
+<%= link_to "My Information ", new_visitor_path, { :class => "boton"}%>
+
+
+<div class="d-flex justify-content-center">
 <% @visitors.each do |visitor|%>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title"><%= link_to visitor.FullName, visitor_path(visitor)%></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= visitor.Phone_no%></h6>
-    <p class="card-text"><%= visitor.BirthDay%></p>
+    <h5 class="card-title"><p>Your Name :</p><%= visitor.FullName%></h5>
+    <h5 class="card-subtitle mb-2 text-muted"><p>Your Phone Number :</p><%= visitor.Phone_no%></h5>
+    <h5 class="card-text"><p>Your BirthDay :</p><%= visitor.BirthDay%></h5>
     <div class="btn-group" role="group" aria-label="Basic example">
-    <a  class="btn btn-secondary"  role="button" aria-pressed="true" href="<%= edit_visitor_path(visitor) %>" >Edit User</a>
-    <a class="btn btn-secondary " role="button" aria-pressed="true" data-confirm="Are you sure you want to delete <%= visitor.FullName %>?" data-method="delete" href="/visitors/<%= visitor.id %>" rel="nofollow">Delete User</a>
+    <a  class="buttonAll"  role="button" aria-pressed="true" href="<%= edit_visitor_path(visitor) %>" >Edit User</a>
+    <a class="buttonAll" role="button" aria-pressed="true" data-confirm="Are you sure you want to delete <%= visitor.FullName %>?" data-method="delete" href="/visitors/<%= visitor.id %>" rel="nofollow">Delete User</a>
+    <a  class="buttonAll"  role="button" aria-pressed="true" href="<%=  visitor_path(visitor)%>" >See Post</a>
+
+    
   </div>
   </div>
 </div>

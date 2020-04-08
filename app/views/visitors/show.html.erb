@@ -1,19 +1,20 @@
-<h1> <%= @visitor.FullName %> Posts</h1>
-<br><br>
-<h3><%= link_to "New Post", new_post_path(:visitor_id => @visitor.id), { :class => "btn btn-primary btn-sm active bg-secondary text-white rounded-top"}%></h3>
+<h1> <strong><%= @visitor.FullName %></strong> Posts</h1>
 <br><br>
 
-<div class="d-flex justify-content-between">
+<h3><%= link_to "New Post", new_post_path(:visitor_id => @visitor.id), { :class => "buttonAll"}%></h3>
+<br><br>
+
+<div class="d-flex justify-content-center">
 <% @posts.each do |post|%>
 <div class="card-group">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Talent Name :</h5>
-<h6 class="card-subtitle mb-2 text-muted"><%= post.TalentName %></h6>
-        <h5 class="card-text">Talent Description :</h5>
-       <h6 class="card-subtitle mb-2 text-muted"> <%= post.TalentDescription %></h6>
+    <p class="card-title">Talent Name :</p>
+<h5 class="card-subtitle mb-2 text-muted"><%= post.TalentName %></h5>
+        <p class="card-text">Talent Description :</p>
+       <h5 class="card-subtitle mb-2 text-muted"> <%= post.TalentDescription %></h5>
          <div class="btn-group" role="group" aria-label="Basic example">
-        <a class="btn btn-secondary " role="button" aria-pressed="true" data-confirm="Are you sure you want to delete <%= post.TalentName %>?" data-method="delete" href="/posts/<%= post.id %>" rel="nofollow"><i class="large material-icons">Delete </i>
+        <a class="buttonAll" role="button" aria-pressed="true" data-confirm="Are you sure you want to delete <%= post.TalentName %>?" data-method="delete" href="/posts/<%= post.id %>" rel="nofollow"><i class="large material-icons">Delete </i>
    </a>
  </div>
   </div>
