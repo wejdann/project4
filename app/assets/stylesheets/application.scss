@@ -18,7 +18,13 @@
 @import "bootstrap";
 html, body {
     text-align: center;
-    background: #e4decd
+    background: #e4decd;
+    background: url(Talent.jpeg)no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+
 }
 a {
     color:#a78787;
